@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  SlidingHero
+//
+//  Created by 文有智 on 2025/3/24.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define kNavBarHeight \
+({\
+    CGFloat height = 0.0;\
+    if (@available(iOS 11.0, *)) {\
+        UIEdgeInsets insets = [UIApplication sharedApplication].delegate.window.safeAreaInsets;\
+        height = insets.top > 0 ? 44.0 + insets.top : 44.0;\
+    } else {\
+        height = 64.0;\
+    }\
+    height;\
+})
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define kKeyString @"gggrrr123=tta43453t"
+
+
+#define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#endif /* PrefixHeader_pch */
