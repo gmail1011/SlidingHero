@@ -11,7 +11,7 @@
 
 @property (nonatomic, strong) UIWindow *window;
 
-- (void)initAppFlyer;
+- (void)onLoadFlyer;
 
 
 @end

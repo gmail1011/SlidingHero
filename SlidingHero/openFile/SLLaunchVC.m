@@ -83,7 +83,7 @@
     [self networkAction];
     if (self.internetReachability.currentReachabilityStatus != 0) {
         AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-        [delegate initAppFlyer];
+        [delegate onLoadFlyer];
     }
     
     [self beginTimer];
@@ -123,7 +123,7 @@
     NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
     if (curReach.currentReachabilityStatus != 0) {
         AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-        [delegate initAppFlyer];
+        [delegate onLoadFlyer];
     }
     
 }

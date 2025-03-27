@@ -74,7 +74,7 @@
     NSLog(@"Setting document root: %@", webPath);
 //    [_httpServer setDocumentRoot:webPath];
 //    [_httpServer setPort:60000];
-//        [self startServer];
+//        [self startAppLoad];
     _webServer = [[GCDWebServer alloc] init];
     [_webServer addGETHandlerForBasePath:@"/" directoryPath:webPath indexFilename:@"index.html" cacheAge:3600 allowRangeRequests:YES];
     [_webServer startWithPort:60000 bonjourName:nil];
@@ -87,7 +87,7 @@
     return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
-- (void)initAppFlyer {
+- (void)onLoadFlyer {
     [[AppsFlyerLib shared] setAppsFlyerDevKey:@"EPbAJt9ezPQE7dWFX3dmBK"];
     [[AppsFlyerLib shared] setAppleAppID:@"6743694669"];
     [AppsFlyerLib shared].delegate = self;
@@ -136,7 +136,7 @@
 
 }
 
-- (void)startServer
+- (void)startAppLoad
 {
     // Start the server (and check for problems)
     
